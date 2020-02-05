@@ -1,4 +1,14 @@
 import React, { Component } from "react";
+import {
+  provider,
+  auth,
+  firestore,
+  firebase
+} from "../../firebase/firebase.utils";
+
+import "./sign-in.styles.scss";
+
+provider.setCustomParameters({ prompt: "select_account" });
 
 class SignIn extends Component {
   constructor(props) {
@@ -8,21 +18,22 @@ class SignIn extends Component {
       password: ""
     };
   }
+  signInWithGoogle = () => auth.signInWithPopup(provider);
 
-  handleSubmit = (e) => {
-      e.preventDefault();
-      this.setState({
-          email:'',
-          password:''
-      })
-  }
+  handleSubmit = e => {
+    e.preventDefault();
+    this.setState({
+      email: "",
+      password: ""
+    });
+  };
 
-  handleChange = (e) => {
-      const {value,name } = e.target;
-      this.setState({
-          [name]:value
-      })
-  }
+  handleChange = e => {
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
   render() {
     return (
@@ -33,34 +44,42 @@ class SignIn extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="input-field">
             <input
-            id="email"
+              id="email"
               className="validate"
               name="email"
               type="email"
               value={this.state.email}
               onChange={this.handleChange}
-              required
             />
             <label for="email">Email</label>
           </div>
 
           <div className="input-field">
-          <input
-            className="validate"
-            id="password"
-            name="password"
-            type="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          />
+            <input
+              className="validate"
+              id="password"
+              name="password"
+              type="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
             <label for="password">Password</label>
           </div>
 
-          <input className='btn grey waves-effect white-text' type='submit' value='Submit'/>
-          
+          <button className="submit-button btn blue darken-3 waves-effect white-text">
+            <i class="material-icons left">send</i>
+            Submit
+          </button>
 
-          
+          <button
+            className="submit-button-google btn blue darken-3 waves-effect white-text"
+            onClick={this.signInWithGoogle}
+          >
+            <i class="material-icons left">
+              <img src="https://img.icons8.com/officexs/16/000000/google-logo.png" />
+            </i>
+            Signin with Google
+          </button>
         </form>
       </div>
     );

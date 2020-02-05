@@ -1,0 +1,16 @@
+.sign-in{
+    .submit-button-google{
+        float: right;
+        img{
+            margin-top: 2px;
+        }
+
+        &:hover{
+            background-color:  #e61313b2;
+        }
+    }
+
+    .submit-input{
+        color: white;
+    }
+}
