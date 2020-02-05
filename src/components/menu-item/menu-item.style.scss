@@ -5,13 +5,13 @@
 
 .menu-item{
   overflow: hidden;
-}
 
-.card-content {
+
+  .card-content {
   background-position: center;
   background-size: cover;
   height: 400px;
-
+  }
 
   &:hover{
     transform: scale(1.2);

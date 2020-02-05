@@ -1,0 +1,24 @@
+
+.card{
+
+    height: 600px;
+
+    .image {
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 0px;
+        height: max-content;
+        width: 95%;
+        margin: auto;
+        }
+
+    .card-content{
+        margin-bottom: 0px;
+        font-size: 20px;
+    }
+
+    .price{
+        float: right;
+    }
+
+}
