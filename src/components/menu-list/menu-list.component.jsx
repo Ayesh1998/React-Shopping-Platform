@@ -56,8 +56,9 @@ class MenuList extends React.Component {
         return (
             <div className="row directory-menu">
               {
-                  this.state.section.map(({title , imageUrl, id, linkUrl , size} ) => (
-                      <MenuItem titles={title} key={id} image={imageUrl} size={size}/>
+                  this.state.section.map(({id, ...otherProps} ) => (
+                   //   <MenuItem titles={title} key={id} image={imageUrl} size={size} linkUrl={linkUrl}/>
+                      <MenuItem key={id}  {...otherProps}/>
                   ))
               }
             </div>
