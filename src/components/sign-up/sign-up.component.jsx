@@ -101,7 +101,7 @@ class SignUp extends React.Component {
               id="comfirmPassword"
               name="comfirmPassword"
               type="password"
-              value={this.state.confirmPassword}
+              value={this.state.comfirmPassword}
               onChange={this.handleChange}
             />
             <label for="comfirmPassword">Confirm Password</label>

@@ -8,6 +8,7 @@ import {
 
 import "./sign-in.styles.scss";
 
+
 provider.setCustomParameters({ prompt: "select_account" });
 
 class SignIn extends Component {
@@ -20,8 +21,16 @@ class SignIn extends Component {
   }
   signInWithGoogle = () => auth.signInWithPopup(provider);
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
+    const { email,password} = this.state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email,password);
+      
+    } catch (error) {
+      
+    }
     this.setState({
       email: "",
       password: ""
@@ -34,6 +43,8 @@ class SignIn extends Component {
       [name]: value
     });
   };
+
+  
 
   render() {
     return (
