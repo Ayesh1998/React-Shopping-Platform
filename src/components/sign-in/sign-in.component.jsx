@@ -44,26 +44,26 @@ class SignIn extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="input-field">
             <input
-              id="email"
+              id="emailin"
               className="validate"
               name="email"
               type="email"
               value={this.state.email}
               onChange={this.handleChange}
             />
-            <label for="email">Email</label>
+            <label for="emailin">Email</label>
           </div>
 
           <div className="input-field">
             <input
               className="validate"
-              id="password"
+              id="passwordin"
               name="password"
               type="password"
               value={this.state.password}
               onChange={this.handleChange}
             />
-            <label for="password">Password</label>
+            <label for="passwordin">Password</label>
           </div>
 
           <button className="submit-button btn blue darken-3 waves-effect white-text">
