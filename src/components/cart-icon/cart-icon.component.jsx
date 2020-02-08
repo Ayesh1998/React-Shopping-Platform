@@ -16,5 +16,7 @@ const mapDispatchToProps = dispatch => ({
     toggeleCardHidden: () => dispatch(toggeleCardHidden())
 })
 
+
+
 export default connect(null, mapDispatchToProps)(CartIcon);
 
