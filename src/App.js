@@ -9,6 +9,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import CheckoutPage from "./pages/checkout/checkout.component";
+import Footer from './components/footer/footer.component';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -56,6 +57,7 @@ class App extends React.Component {
             }
           />
         </Switch>
+        <Footer/>
       </div>
     );
   }

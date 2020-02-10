@@ -12,8 +12,8 @@ import { selectCurrentUser } from '../../redux/user/user.selector';
 
 const Header = ({ currentUser, hidden }) => {
   return (
-    <nav className="header">
-      <div className="nav-wrapper blue-text text-darken-2">
+    <nav className="header #00796b teal darken-2">
+      <div className="nav-wrapper text-darken-2">
         <div className="brand-logo-container">
           <Link to="/" class="brand-logo">
             <Logo />
